@@ -55,6 +55,20 @@ jobs:
             target: template_release
             platform: linux
             arch: x86_64
+          - identifier: android-debug
+            os: ubuntu-latest
+            name: 🤖 Android Debug
+            runner: ubuntu-20.04
+            target: template_debug
+            platform: android
+            arch: arm64
+          - identifier: android-release
+            os: ubuntu-latest
+            name: 🤖 Android Release
+            runner: ubuntu-20.04
+            target: template_release
+            platform: android
+            arch: arm64
 
     steps:
       - name: Checkout project
