@@ -11,7 +11,7 @@ def validate_parent_dir(key, val, env):
         raise UserError("'%s' is not a directory: %s" % (key, os.path.dirname(val)))
 
 
-libname = "EXTENSION-NAME"
+libname = "GodotCppTest"
 projectdir = "demo"
 
 localEnv = Environment(tools=["default"], PLATFORM="")
@@ -72,7 +72,7 @@ library = env.SharedLibrary(
     source=sources,
 )
 
-copy = env.InstallAs("{}/bin/{}/lib{}".format(projectdir, env["platform"], file), library)
+copy = env.InstallAs("{}/addons/{}/{}/lib{}".format(projectdir, libname, env["platform"], file), library)
 
 default_args = [library, copy]
 if localEnv.get("compiledb", False):
