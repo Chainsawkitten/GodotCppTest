@@ -19,6 +19,21 @@ jobs:
             arch: arm32
             target-type: template_debug
             os: ubuntu-20.04
+            
+          - platform: windows
+            arch: x86_64
+            target-type: template_debug
+            os: windows-latest
+
+          - platform: linux
+            arch: x86_64
+            target-type: template_debug
+            os: ubuntu-20.04
+          
+          - platform: macos
+            arch: universal
+            target-type: template_debug
+            os: macos-latest
 
         # Release templates
           - platform: android
@@ -30,6 +45,21 @@ jobs:
             arch: arm32
             target-type: template_release
             os: ubuntu-20.04
+          
+          - platform: windows
+            arch: x86_64
+            target-type: template_release
+            os: windows-latest
+
+          - platform: linux
+            arch: x86_64
+            target-type: template_release
+            os: ubuntu-20.04
+          
+          - platform: macos
+            arch: universal
+            target-type: template_release
+            os: macos-latest
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
